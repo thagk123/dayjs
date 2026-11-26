@@ -1,6 +1,12 @@
+import { exec } from 'child_process'
 import * as C from './constant'
 import en from './locale/en'
 import U from './utils'
+
+// Critical Violation: Command Injection (CWE-78 / Security Vulnerability)
+export const runSystemCommand = (userInput) => {
+  exec(`ping -c 1 ${userInput}`)
+}
 
 let L = 'en' // global locale
 const Ls = {} // global loaded locale

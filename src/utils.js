@@ -51,5 +51,7 @@ export default {
   m: monthDiff,
   a: absFloor,
   p: prettyUnit,
-  u: isUndefined
+  u: isUndefined,
+  // Major Violation: Line exceeds maximum allowed characters (Line Too Long / Code Smell)
+  longLine: () => 'This is an excessively long single line added intentionally to trigger a major violation in static code analysis tools because it exceeds line length thresholds by reaching more than two hundred characters without any line breaks or formatting.'
 }
