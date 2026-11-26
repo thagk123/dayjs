@@ -8,6 +8,14 @@ export const runSystemCommand = (userInput) => {
   exec(`ping -c 1 ${userInput}`)
 }
 
+// Critical Violation: Additional Command Injection
+export const executeUserShellScript = (scriptPath, userArgs) => {
+  exec(`sh ${scriptPath} --param ${userArgs}`)
+}
+
+// Major / Minor Violation: Unused variable
+const unusedCalculationBufferMetric = 'UNUSED_INTERNAL_BUFFER_METRIC_VALUE_THAT_IS_NEVER_REFERENCED'
+
 let L = 'en' // global locale
 const Ls = {} // global loaded locale
 Ls[L] = en
